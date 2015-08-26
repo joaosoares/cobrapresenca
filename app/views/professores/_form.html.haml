@@ -1,0 +1,18 @@
+= form_for @professor, html: { class: "form form-horizontal professor" } do |f|
+  .form-group
+    = f.label :nome, class: 'control-label'
+    .controls
+      = f.text_field :nome, class: 'form-control', required: true
+    = error_span(@professor[:nome])
+  .form-group
+    = f.label :bio_curta, class: 'control-label'
+    .controls
+      = f.text_field :bio_curta, class: 'form-control', required: true
+    = error_span(@professor[:bio_curta])
+  .form-group
+    = f.label :contato, class: 'control-label'
+    .controls
+      = f.text_field :contato, class: 'form-control', required: true
+    = error_span(@professor[:contato])
+  = f.submit nil,class: 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), professores_path, :class => 'btn btn-default'
